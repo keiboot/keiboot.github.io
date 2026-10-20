@@ -7,7 +7,7 @@
     <title>Keitoo | Editor de Video para Creadores y Marcas</title>
     <meta name="description" content="Soy Keitoo, editor de video con más de 4 años de experiencia. Edición para YouTube, Shorts y Reels con Premiere Pro y After Effects. Mira mi portafolio y cotiza tu proyecto.">
     <meta name="author" content="Keitoo">
-    <meta name="theme-color" content="#F5F0E8">
+    <meta name="theme-color" content="#0E0D0B">
     <link rel="canonical" href="https://keiboot.github.io/">
 
     <!-- Rendimiento: conectar antes a los dominios externos -->
@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://www.youtube-nocookie.com">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%231A1A1A'/%3E%3Ctext%20x='50'%20y='73'%20font-family='Georgia,serif'%20font-size='64'%20font-weight='bold'%20fill='%23E8432D'%20text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20fill='%23E8432D'/%3E%3Ctext%20x='50'%20y='73'%20font-family='Georgia,serif'%20font-size='64'%20font-weight='bold'%20fill='%23F5F0E8'%20text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
 
     <!-- Cómo se ve al compartir el enlace -->
     <meta property="og:site_name" content="KietoStudy">
@@ -34,7 +34,7 @@
     <meta name="twitter:title" content="Keitoo | Editor de Video para Creadores y Marcas">
     <meta name="twitter:description" content="Más de 4 años editando para YouTube, Shorts y Reels. Mira el portafolio y cotiza tu proyecto.">
     <meta name="twitter:image" content="https://keiboot.github.io/assets/img/portada-compartir.jpg">
-    <meta name="twitter:creator" content="@keitoo__">
+    <meta name="twitter:creator" content="@kieto_">
 
     <!-- Datos estructurados para Google -->
     <script type="application/ld+json">
@@ -54,9 +54,10 @@
             "name": "Keitoo",
             "jobTitle": "Editor de video",
             "sameAs": [
-                "https://www.instagram.com/keitoo_tq/",
+                "https://www.instagram.com/kietoobtx/",
                 "https://www.youtube.com/@_Keitoo",
-                "https://x.com/keitoo__"
+                "https://x.com/kietoo_",
+                "https://www.tiktok.com/@__keitoo"
             ]
         },
         "makesOffer": [
@@ -73,6 +74,14 @@
 <body>
 
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- Barra tipo "timeline" de scroll -->
+    <div class="barra-timeline" aria-hidden="true">
+        <div class="barra-timeline__relleno" data-timeline-scroll></div>
+        <span class="barra-timeline__marca" style="left:25%"></span>
+        <span class="barra-timeline__marca" style="left:50%"></span>
+        <span class="barra-timeline__marca" style="left:75%"></span>
+    </div>
 
     <header class="encabezado-sitio">
         <div class="nav-container">
@@ -95,36 +104,89 @@
 
         <!-- ============ HERO ============ -->
         <section class="hero">
-            <div class="hero-fondo-decorativo" aria-hidden="true"></div>
+            <div class="hero-decor" aria-hidden="true">
+                <span class="sticker sticker--rec sm-wiggle">● REC</span>
+                <span class="sticker sticker--acido sm-wiggle-delay">SIN CAPES · 24/7</span>
+                <span class="sticker">★</span>
+                <span class="sticker sticker--rojo sm-wiggle">NO AL B-ROLL ABURRIDO</span>
+                <div class="contador-lider" data-leader>
+                    <span class="contador-lider__numero" data-leader-num>8</span>
+                </div>
+            </div>
+
+            <div class="vhs-osd" aria-hidden="true">
+                <span class="vhs-osd__play">▶ PLAY</span>
+                <span data-vhs-time>00:00:00:00</span>
+            </div>
+
             <div class="container">
                 <div class="hero-contenido">
+                    <div class="hero-texto">
 
-                    <h1 class="hero-titulo">
-                        <em>Video</em> editor.<br>
-                        Portafolio 2026.
-                    </h1>
+                        <p class="hero-grito sm-pop">Portafolio · Haciéndolo serio</p>
 
-                    <p class="hero-descripcion">
-                        Edito para creadores de contenido y marcas que necesitan que su video
-                        se vea bien y retenga hasta el final. YouTube, Shorts y Reels.
-                    </p>
+                        <h1 class="hero-titulo">
+                            <span class="hero-titulo__linea">
+                                <span data-ransom>Video</span>
+                            </span>
+                            <span class="hero-titulo__linea">
+                                <span data-ransom>editor.</span>
+                                <span class="rotulo-año">2026</span>
+                            </span>
+                        </h1>
 
-                    <div class="hero-acciones">
-                        <a href="contacto/index.html" class="btn btn-glow" id="btn-contratar">Contratar esclavo?</a>
-                        <a href="proyectos/index.html" class="btn btn--secundario">Ver proyectos</a>
+                        <p class="hero-descripcion sm-pop">
+                            Edito para creadores de contenido y marcas que necesitan que su video
+                            se vea bien y retenga hasta el final. YouTube, Shorts y Reels.
+                        </p>
+
+                        <div class="hero-acciones sm-pop">
+                            <a href="contacto/index.html" class="btn btn-glow">Contratar esclavo?</a>
+                            <a href="proyectos/index.html" class="btn btn--secundario">Ver proyectos</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-lado">
+                        <figure class="hero-retrato">
+                            <span class="cinta cinta--retrato" aria-hidden="true"></span>
+                            <span class="hero-vinilo" aria-hidden="true"></span>
+                            <img src="assets/img/kevin.jpg"
+                                 alt="Keitoo (Kevin), editor de video"
+                                 width="500" height="500"
+                                 fetchpriority="high" decoding="async">
+                            <figcaption>Kevin · el editor</figcaption>
+                        </figure>
+
+                        <nav class="hero-redes" aria-label="Redes sociales de Keitoo">
+                            <a class="hero-red" href="https://x.com/kietoo_" target="_blank" rel="noopener me" aria-label="X (Twitter)">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                            <a class="hero-red" href="https://www.instagram.com/kietoobtx/" target="_blank" rel="noopener me" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                            </a>
+                            <a class="hero-red" href="https://www.tiktok.com/@__keitoo" target="_blank" rel="noopener me" aria-label="TikTok">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.89 2.89 2.89 2.89 0 0 1-2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                            </a>
+                            <a class="hero-red" href="https://www.youtube.com/@_Keitoo" target="_blank" rel="noopener me" aria-label="YouTube">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg>
+                            </a>
+                            <a class="hero-red hero-red--wa" href="https://wa.me/kietoobtx" target="_blank" rel="noopener me" aria-label="WhatsApp">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </nav>
                     </div>
 
                     <dl class="hero-metricas">
-                        <div>
-                            <dt class="metrica-valor">+3 <span>años</span></dt>
+                        <div class="sm-pop">
+                            <dt class="metrica-valor"><span data-contador="4">0</span> <span>años</span></dt>
                             <dd class="metrica-etiqueta">Editando contenido audiovisual</dd>
                         </div>
-                        <div>
-                            <dt class="metrica-valor">24–48 <span>h</span></dt>
+                        <div class="sm-pop">
+                            <dt class="metrica-valor"><span data-contador="24">0</span>–<span data-contador="48">0</span> <span>h</span></dt>
                             <dd class="metrica-etiqueta">Entrega típica en Shorts y Reels</dd>
                         </div>
-                        <div>
-                            <dt class="metrica-valor">6 <span>meses</span></dt>
+                        <div class="sm-pop">
+                            <dt class="metrica-valor"><span data-contador="6">0</span> <span>meses</span></dt>
                             <dd class="metrica-etiqueta">Backup de tu proyecto sin costo</dd>
                         </div>
                     </dl>
@@ -132,14 +194,23 @@
             </div>
         </section>
 
+        <!-- ============ MARQUEE ============ -->
+        <div class="marquesina" aria-hidden="true">
+            <div class="marquesina__pista">
+                <span>HACIENDOLO SERIO ✳ MOTION GRAPHICS ✳ SHORTS ✳ REELS ✳ YOUTUBE ✳ VFX ✳ STOP MOTION ✳ COLOR ✳ SONIDO ✳ </span>
+                <span>HACIENDOLO SERIO ✳ MOTION GRAPHICS ✳ SHORTS ✳ REELS ✳ YOUTUBE ✳ VFX ✳ STOP MOTION ✳ COLOR ✳ SONIDO ✳ </span>
+            </div>
+        </div>
+
         <!-- ============ SHOWREEL ============ -->
         <section class="seccion--compacta" aria-labelledby="titulo-showreel">
             <div class="container">
                 <h2 id="titulo-showreel" class="sr-only">Video de presentación</h2>
                 <div class="video-presentacion revelar">
-                    <h1>I am cooking the new porfolio 2026</h1>
+                    <span class="cinta cinta--sup-izq" aria-hidden="true"></span>
+                    <span class="cinta cinta--sup-der" aria-hidden="true"></span>
                     <iframe
-                        src="Proxmamente"
+                        src="https://www.youtube-nocookie.com/embed/FsHG9Mp_J8g?rel=0&modestbranding=1"
                         title="Showreel de Keitoo — editor de video"
                         loading="lazy"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -150,12 +221,12 @@
         </section>
 
         <!-- ============ SOBRE MÍ + HABILIDADES ============ -->
-        <section class="seccion" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+        <section class="seccion seccion--alt" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
             <div class="container">
                 <div class="bloque-presentacion revelar">
                     <div>
                         <p class="etiqueta-seccion">Sobre mí</p>
-                        <h2 id="titulo-sobre-mi" class="presentacion-saludo">Hey! Soy Keitoo.</h2>
+                        <h2 id="titulo-sobre-mi" class="presentacion-saludo titulo-kinetico" data-kinetico>Hey! Soy Keitoo.</h2>
                         <p class="presentacion-descripcion">
                             Editor de video con más de 4 años de experiencia en la creación de contenido
                             audiovisual. Tengo la capacidad de adaptarme a distintos estilos de edición y
@@ -167,7 +238,8 @@
                             Si tienes un proyecto en mente, escríbeme y lo hablamos sin compromiso.
                         </p>
                         <div class="grupo-botones">
-                            <a href="contacto/" class="btn btn--secundario">Hablemos de tu proyecto</a>
+                            <a href="contacto/index.html" class="btn btn--secundario">Hablemos de tu proyecto</a>
+                            <span class="sello sello--tinta" aria-hidden="true">Auténtico · 100%</span>
                         </div>
                     </div>
 
@@ -219,19 +291,19 @@
         </section>
 
         <!-- ============ SERVICIOS ============ -->
-        <section class="seccion seccion--alt" id="servicios" aria-labelledby="titulo-servicios">
+        <section class="seccion" id="servicios" aria-labelledby="titulo-servicios">
             <div class="container">
                 <div class="encabezado-seccion encabezado-seccion--centrado revelar">
                     <p class="etiqueta-seccion">Servicios</p>
-                    <h2 id="titulo-servicios" class="titulo-seccion">En qué te puedo <span>ayudar</span></h2>
+                    <h2 id="titulo-servicios" class="titulo-seccion titulo-kinetico" data-kinetico data-glitch>En qué te puedo ayudar</h2>
                     <p class="subtitulo-seccion">
                         Trabajo tanto con creadores que suben cada semana como con marcas
                         que necesitan piezas puntuales.
                     </p>
                 </div>
 
-                <div class="servicios-grid revelar">
-                    <article class="servicio-card">
+                <div class="servicios-grid">
+                    <article class="servicio-card revelar sm-tilt-a">
                         <div class="servicio-icono" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="4" width="20" height="16" rx="2"></rect>
@@ -249,7 +321,7 @@
                         </ul>
                     </article>
 
-                    <article class="servicio-card">
+                    <article class="servicio-card revelar sm-tilt-b">
                         <div class="servicio-icono" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="6" y="2" width="12" height="20" rx="2.5"></rect>
@@ -266,7 +338,7 @@
                         </ul>
                     </article>
 
-                    <article class="servicio-card">
+                    <article class="servicio-card revelar sm-tilt-c">
                         <div class="servicio-icono" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="m12 3 1.9 4.6 4.6 1.9-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"></path>
@@ -286,31 +358,44 @@
             </div>
         </section>
 
+        <!-- ============ MARQUEE INVERTIDA ============ -->
+        <div class="marquesina marquesina--invertida" aria-hidden="true">
+            <div class="marquesina__pista">
+                <span>ENTREGA RÁPIDA ✳ SIN CAPES ✳ REVISIONES SIN ESTRÉS ✳ BACKUP 6 MESES ✳ PUNTUALIDAD ABSOLUTA ✳ </span>
+                <span>ENTREGA RÁPIDA ✳ SIN CAPES ✳ REVISIONES SIN ESTRÉS ✳ BACKUP 6 MESES ✳ PUNTUALIDAD ABSOLUTA ✳ </span>
+            </div>
+        </div>
+
         <!-- ============ PROCESO ============ -->
         <section class="seccion" id="proceso" aria-labelledby="titulo-proceso">
             <div class="container">
                 <div class="encabezado-seccion revelar">
                     <p class="etiqueta-seccion">Cómo trabajamos</p>
-                    <h2 id="titulo-proceso" class="titulo-seccion">Cuatro pasos, sin <span>vueltas</span></h2>
+                    <h2 id="titulo-proceso" class="titulo-seccion titulo-kinetico" data-kinetico>Cuatro pasos, sin vueltas</h2>
                     <p class="subtitulo-seccion">
                         Un proceso simple para que sepas exactamente qué esperar desde el primer mensaje.
                     </p>
                 </div>
 
-                <div class="proceso-grid revelar">
+                <div class="proceso-timeline revelar">
+                    <div class="proceso-rail" aria-hidden="true"><span class="proceso-playhead"></span></div>
                     <article class="proceso-paso">
+                        <span class="proceso-clip">CLIP 01</span>
                         <h3>Hablamos</h3>
                         <p>Me cuentas qué necesitas, para qué plataforma y para cuándo. Te doy un precio y un plazo claros.</p>
                     </article>
                     <article class="proceso-paso">
+                        <span class="proceso-clip">CLIP 02</span>
                         <h3>Me pasas el material</h3>
                         <p>Por Google Drive, OneDrive o Frame.io. Con tus clips y tu guion si lo tienes, yo me encargo del resto.</p>
                     </article>
                     <article class="proceso-paso">
+                        <span class="proceso-clip">CLIP 03</span>
                         <h3>Edito y te muestro</h3>
                         <p>Recibes una primera versión para revisar. Ajusto lo que haga falta hasta que encaje con tu canal.</p>
                     </article>
                     <article class="proceso-paso">
+                        <span class="proceso-clip">CLIP 04</span>
                         <h3>Entrega final</h3>
                         <p>Te mando el archivo listo para subir, en el formato y resolución que necesites.</p>
                     </article>
@@ -323,7 +408,7 @@
             <div class="container">
                 <div class="encabezado-seccion encabezado-seccion--centrado revelar">
                     <p class="etiqueta-seccion">Testimonios</p>
-                    <h2 id="titulo-testimonios" class="titulo-seccion">Lo que dicen mis <span>clientes</span></h2>
+                    <h2 id="titulo-testimonios" class="titulo-seccion titulo-kinetico" data-kinetico>Lo que dicen mis clientes</h2>
                     <p class="subtitulo-seccion">Reseñas reales de creadores con los que he trabajado.</p>
                 </div>
             </div>
@@ -331,7 +416,8 @@
             <div class="carousel-wrapper">
                 <div class="carousel-track">
                     <!-- Set 1 -->
-                    <figure class="testimonio-card">
+                    <figure class="testimonio-card rot-a">
+                        <span class="sello" style="position:absolute; top:10px; right:12px;" aria-hidden="true">Real</span>
                         <figcaption class="perfil-testimonio">
                             <img src="assets/img/cliente-xusquete.jpg" alt="" width="46" height="46" loading="lazy" decoding="async">
                             <div class="perfil-info">
@@ -342,7 +428,7 @@
                         <blockquote class="comentario">“Muy profesional, atento, con ganas de involucrarse en el trabajo que desarrolla, una gran capacidad para editar y muchas nociones. He trabajado con él y me ha dado un punto de vista muy distinto y único para mejorar en lo que hago, totalmente recomendado.”</blockquote>
                     </figure>
 
-                    <figure class="testimonio-card">
+                    <figure class="testimonio-card rot-b">
                         <figcaption class="perfil-testimonio">
                             <img src="assets/img/cliente-supireee.jpg" alt="" width="46" height="46" loading="lazy" decoding="async">
                             <div class="perfil-info">
@@ -353,7 +439,7 @@
                         <blockquote class="comentario">“Excelente comunicación, gran suelta de ideas para el contenido que solicité, profesionalismo y buena animación de la edición en shorts. 10/10.”</blockquote>
                     </figure>
 
-                    <figure class="testimonio-card">
+                    <figure class="testimonio-card rot-c">
                         <figcaption class="perfil-testimonio">
                             <img src="assets/img/cliente-misswonderis.jpg" alt="" width="46" height="46" loading="lazy" decoding="async">
                             <div class="perfil-info">
@@ -364,7 +450,7 @@
                         <blockquote class="comentario">“Hola Keito, muchas gracias por el video. Aprecio mucho tu trabajo y el tiempo que le dedicaste. ¡Gracias por ser amable conmigo!”</blockquote>
                     </figure>
 
-                    <figure class="testimonio-card">
+                    <figure class="testimonio-card rot-a">
                         <figcaption class="perfil-testimonio">
                             <img src="assets/img/cliente-m1kasaa.jpg" alt="" width="46" height="46" loading="lazy" decoding="async">
                             <div class="perfil-info">
@@ -375,7 +461,7 @@
                         <blockquote class="comentario">“¡Existo! Me encantó cómo quedó, están muy lindos los TikToks que te mandé.”</blockquote>
                     </figure>
 
-                    <figure class="testimonio-card">
+                    <figure class="testimonio-card rot-b">
                         <figcaption class="perfil-testimonio">
                             <img src="assets/img/cliente-soarinngchu.jpg" alt="" width="46" height="46" loading="lazy" decoding="async">
                             <div class="perfil-info">
@@ -387,7 +473,7 @@
                     </figure>
 
                     <!-- Set 2: copia exacta para el bucle infinito (oculta a lectores de pantalla) -->
-                    <figure class="testimonio-card" aria-hidden="true">
+                    <figure class="testimonio-card rot-a" aria-hidden="true">
                         <figcaption class="perfil-testimonio">
                             <img src="assets/img/cliente-xusquete.jpg" alt="" width="46" height="46" loading="lazy" decoding="async">
                             <div class="perfil-info">
@@ -398,7 +484,7 @@
                         <blockquote class="comentario">“Muy profesional, atento, con ganas de involucrarse en el trabajo que desarrolla, una gran capacidad para editar y muchas nociones. He trabajado con él y me ha dado un punto de vista muy distinto y único para mejorar en lo que hago, totalmente recomendado.”</blockquote>
                     </figure>
 
-                    <figure class="testimonio-card" aria-hidden="true">
+                    <figure class="testimonio-card rot-b" aria-hidden="true">
                         <figcaption class="perfil-testimonio">
                             <img src="assets/img/cliente-supireee.jpg" alt="" width="46" height="46" loading="lazy" decoding="async">
                             <div class="perfil-info">
@@ -409,7 +495,7 @@
                         <blockquote class="comentario">“Excelente comunicación, gran suelta de ideas para el contenido que solicité, profesionalismo y buena animación de la edición en shorts. 10/10.”</blockquote>
                     </figure>
 
-                    <figure class="testimonio-card" aria-hidden="true">
+                    <figure class="testimonio-card rot-c" aria-hidden="true">
                         <figcaption class="perfil-testimonio">
                             <img src="assets/img/cliente-misswonderis.jpg" alt="" width="46" height="46" loading="lazy" decoding="async">
                             <div class="perfil-info">
@@ -420,7 +506,7 @@
                         <blockquote class="comentario">“Hola Keito, muchas gracias por el video. Aprecio mucho tu trabajo y el tiempo que le dedicaste. ¡Gracias por ser amable conmigo!”</blockquote>
                     </figure>
 
-                    <figure class="testimonio-card" aria-hidden="true">
+                    <figure class="testimonio-card rot-a" aria-hidden="true">
                         <figcaption class="perfil-testimonio">
                             <img src="assets/img/cliente-m1kasaa.jpg" alt="" width="46" height="46" loading="lazy" decoding="async">
                             <div class="perfil-info">
@@ -431,7 +517,7 @@
                         <blockquote class="comentario">“¡Existo! Me encantó cómo quedó, están muy lindos los TikToks que te mandé.”</blockquote>
                     </figure>
 
-                    <figure class="testimonio-card" aria-hidden="true">
+                    <figure class="testimonio-card rot-b" aria-hidden="true">
                         <figcaption class="perfil-testimonio">
                             <img src="assets/img/cliente-soarinngchu.jpg" alt="" width="46" height="46" loading="lazy" decoding="async">
                             <div class="perfil-info">
@@ -450,11 +536,11 @@
             <div class="container">
                 <div class="encabezado-seccion encabezado-seccion--centrado revelar">
                     <p class="etiqueta-seccion">Mis compromisos</p>
-                    <h2 id="titulo-garantias" class="titulo-seccion">Por qué trabajar conmigo es ir <span>sobre seguro</span></h2>
+                    <h2 id="titulo-garantias" class="titulo-seccion titulo-kinetico" data-kinetico>Por qué trabajar conmigo es ir sobre seguro</h2>
                 </div>
 
-                <div class="garantias-grid revelar">
-                    <article class="garantia-card">
+                <div class="garantias-grid">
+                    <article class="garantia-card revelar sm-tilt-a">
                         <div class="garantia-icono" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -465,7 +551,7 @@
                         <p>Hago los ajustes dependiendo al proyecto, hasta captar la identidad de tu canal.</p>
                     </article>
 
-                    <article class="garantia-card">
+                    <article class="garantia-card revelar sm-tilt-b">
                         <div class="garantia-icono" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M13 2 4.5 13H11l-1 9 8.5-11H12z"></path>
@@ -475,9 +561,8 @@
                         <p>Sé lo importante que es el calendario del algoritmo. Si acordamos una fecha, tu video estará listo.</p>
                     </article>
 
-                    <article class="garantia-card">
+                    <article class="garantia-card revelar sm-tilt-c">
                         <div class="garantia-icono" aria-hidden="true">
-                           
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="4" width="20" height="5" rx="1.5"></rect>
                                 <path d="M4 9v9.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V9"></path>
@@ -496,7 +581,7 @@
             <div class="container">
                 <div class="encabezado-seccion encabezado-seccion--centrado revelar">
                     <p class="etiqueta-seccion">Stack</p>
-                    <h2 id="titulo-programas" class="titulo-seccion">Programas que <span>uso</span></h2>
+                    <h2 id="titulo-programas" class="titulo-seccion titulo-kinetico" data-kinetico>Programas que uso</h2>
                 </div>
 
                 <div class="clientes-grid revelar">
@@ -525,7 +610,7 @@
             <div class="container">
                 <div class="encabezado-seccion encabezado-seccion--centrado revelar">
                     <p class="etiqueta-seccion">Dudas</p>
-                    <h2 id="titulo-faq" class="titulo-seccion">Preguntas <span>frecuentes</span></h2>
+                    <h2 id="titulo-faq" class="titulo-seccion titulo-kinetico" data-kinetico>Preguntas frecuentes</h2>
                 </div>
 
                 <div class="faq-lista revelar">
@@ -575,7 +660,7 @@
                             <span class="faq-toggle-icono" aria-hidden="true">+</span>
                         </button>
                         <div class="faq-answer" id="faq-5" role="region" aria-labelledby="faq-btn-5">
-                            <p>Depende de la duración, el formato y la cantidad de "efectos". Cuéntame qué necesitas por el formulario de contacto, enviar un MD por Twitter o por Discord y te paso un presupuesto cerrado antes de empezar, sin sorpresas.</p>
+                        <p>Depende de la duración, el formato y la cantidad de "efectos". Cuéntame qué necesitas por el formulario de contacto, escríbeme por X o por WhatsApp y te paso un presupuesto cerrado antes de empezar, sin sorpresas.</p>
                         </div>
                     </div>
                 </div>
@@ -586,37 +671,47 @@
         <section class="seccion--compacta" aria-labelledby="titulo-cta">
             <div class="container">
                 <div class="cta-final revelar">
+                    <span class="cinta cinta--sup-izq" aria-hidden="true"></span>
+                    <span class="cinta cinta--sup-der cinta--rosa" aria-hidden="true"></span>
+                    <p class="etiqueta-seccion" style="margin-inline: auto;">Último llamado</p>
                     <h2 id="titulo-cta">¿Empezamos con tu <span>próximo video</span>?</h2>
                     <p>Cuéntame qué tienes en mente. Te respondo con un plazo y un precio claros, sin compromiso.</p>
                     <div class="grupo-botones">
                         <a href="contacto/index.html" class="btn btn-glow">Cotizar mi proyecto</a>
                         <a href="proyectos/index.html" class="btn btn--secundario">Ver el portafolio</a>
                     </div>
+                    <div class="codigo-barras" style="margin-top: 32px; color: var(--tinta);" aria-hidden="true"></div>
                 </div>
             </div>
         </section>
 
     </main>
 
+    <div class="banda-peligro" aria-hidden="true"></div>
+
     <footer class="universal-footer">
         <div class="footer-content">
             <p class="footer-titulo">Aquí mis <span>redes</span></p>
             <nav class="footer-socials" aria-label="Redes sociales">
-                <a href="https://www.instagram.com/keitoo_tq/" target="_blank" rel="noopener me">
+                <a href="https://www.instagram.com/kietoobtx/" target="_blank" rel="noopener me">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                     Instagram
+                </a>
+                <a href="https://www.tiktok.com/@__keitoo" target="_blank" rel="noopener me">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.89 2.89 2.89 2.89 0 0 1-2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                    TikTok
                 </a>
                 <a href="https://www.youtube.com/@_Keitoo" target="_blank" rel="noopener me">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg>
                     YouTube
                 </a>
-                <a href="https://x.com/keitoo__" target="_blank" rel="noopener me">
+                <a href="https://x.com/kietoo_" target="_blank" rel="noopener me">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     X
                 </a>
-                <a href="https://discord.gg/724582927266218007" target="_blank" rel="noopener me">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.369a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.891.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-                    Discord
+                <a href="https://wa.me/kietoobtx" target="_blank" rel="noopener me">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp
                 </a>
             </nav>
             <p class="footer-copy">

@@ -1,16 +1,19 @@
 /* ==============================================
-   KIETOSTUDY — JS COMPARTIDO
+   KIETOSTUDY — JS PUNK (2026)
+   Stop motion + motion graphics.
    Todo es opcional: si falla, la página sigue usable.
    ============================================== */
 (function () {
     'use strict';
 
+    var sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     /* ------------------------------------------
        1. MENÚ MÓVIL
        ------------------------------------------ */
     function initMenuMovil() {
-        const boton = document.querySelector('.boton-menu');
-        const nav = document.querySelector('.nav-principal');
+        var boton = document.querySelector('.boton-menu');
+        var nav = document.querySelector('.nav-principal');
         if (!boton || !nav) return;
 
         function cerrar() {
@@ -19,11 +22,10 @@
         }
 
         boton.addEventListener('click', function () {
-            const abierto = nav.classList.toggle('abierto');
+            var abierto = nav.classList.toggle('abierto');
             boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
         });
 
-        // Cerrar al pulsar un enlace o al salir de la vista móvil
         nav.addEventListener('click', function (e) {
             if (e.target.closest('a')) cerrar();
         });
@@ -39,13 +41,13 @@
     }
 
     /* ------------------------------------------
-       2. SOMBRA DEL HEADER AL HACER SCROLL
+       2. HEADER AL HACER SCROLL
        ------------------------------------------ */
     function initHeaderScroll() {
-        const header = document.querySelector('.encabezado-sitio');
+        var header = document.querySelector('.encabezado-sitio');
         if (!header) return;
 
-        let ticking = false;
+        var ticking = false;
         function actualizar() {
             header.classList.toggle('desplazado', window.scrollY > 8);
             ticking = false;
@@ -62,47 +64,111 @@
     }
 
     /* ------------------------------------------
-       3. BARRAS DE HABILIDADES (animan al verse)
+       3. TIMELINE DE SCROLL (playhead superior)
        ------------------------------------------ */
-    function initBarrasHabilidades() {
-        const barras = document.querySelectorAll('.habilidad-barra-progreso');
-        if (!barras.length) return;
+    function initTimelineScroll() {
+        var relleno = document.querySelector('[data-timeline-scroll]');
+        if (!relleno) return;
 
-        function rellenar(barra) {
-            barra.style.width = barra.dataset.ancho || '0%';
+        var ticking = false;
+        function actualizar() {
+            var max = document.documentElement.scrollHeight - window.innerHeight;
+            var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+            // steps de 40 => el playhead salta como fotograma
+            var fotograma = Math.round(pct * 0.4) / 0.4;
+            relleno.style.width = Math.min(fotograma, 100) + '%';
+            ticking = false;
         }
 
-        if (!('IntersectionObserver' in window)) {
-            barras.forEach(rellenar);
-            return;
-        }
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                window.requestAnimationFrame(actualizar);
+                ticking = true;
+            }
+        }, { passive: true });
 
-        const observador = new IntersectionObserver(function (entradas) {
-            entradas.forEach(function (entrada) {
-                if (entrada.isIntersecting) {
-                    rellenar(entrada.target);
-                    observador.unobserve(entrada.target);
-                }
-            });
-        }, { threshold: 0.35 });
-
-        barras.forEach(function (b) { observador.observe(b); });
+        actualizar();
     }
 
     /* ------------------------------------------
-       4. REVELAR ELEMENTOS AL HACER SCROLL
+       4. TIPOGRAFÍA CINÉTICA (letra por letra)
        ------------------------------------------ */
-    function initScrollReveal() {
-        const elementos = document.querySelectorAll('.revelar');
+    function initKinetico() {
+        var elementos = document.querySelectorAll('[data-kinetico]');
         if (!elementos.length) return;
 
-        const sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        Array.prototype.forEach.call(elementos, function (el) {
+            var texto = el.textContent;
+            el.setAttribute('aria-label', texto.trim());
+            el.textContent = '';
+
+            var indice = 0;
+            texto.split('').forEach(function (car) {
+                if (car === ' ') {
+                    el.appendChild(document.createTextNode(' '));
+                    return;
+                }
+                var span = document.createElement('span');
+                span.className = 'letra';
+                span.textContent = car;
+                span.setAttribute('aria-hidden', 'true');
+                // Retardo escalonado: cada letra entra en su propio fotograma
+                span.style.animationDelay = (indice * 0.04) + 's';
+                el.appendChild(span);
+                indice++;
+            });
+        });
+    }
+
+    /* ------------------------------------------
+       5. TÍTULO RANSOM NOTE (hero)
+       Colores y rotaciones asignados por JS para
+       que el HTML quede limpio y accesible.
+       ------------------------------------------ */
+    function initRansom() {
+        var contenedores = document.querySelectorAll('[data-ransom]');
+        if (!contenedores.length) return;
+
+        var tonos = ['lr-rojo', 'lr-crema', 'lr-acido', 'lr-rosa', 'lr-tinta'];
+
+        Array.prototype.forEach.call(contenedores, function (el) {
+            var texto = el.textContent;
+            el.setAttribute('aria-label', texto.trim());
+            el.textContent = '';
+
+            var i = 0;
+            texto.split('').forEach(function (car) {
+                var span = document.createElement('span');
+                span.setAttribute('aria-hidden', 'true');
+                span.style.animationDelay = (0.15 + i * 0.05) + 's';
+
+                if (car === ' ') {
+                    span.className = 'letra-ransom lr-vacio';
+                    span.innerHTML = '&nbsp;';
+                } else {
+                    // rotacion de color pseudoaleatoria pero estable por posicion
+                    span.className = 'letra-ransom ' + tonos[(i * 3 + car.charCodeAt(0)) % tonos.length];
+                    span.textContent = car;
+                }
+                el.appendChild(span);
+                i++;
+            });
+        });
+    }
+
+    /* ------------------------------------------
+       6. REVELAR AL SCROLL
+       ------------------------------------------ */
+    function initScrollReveal() {
+        var elementos = document.querySelectorAll('.revelar');
+        if (!elementos.length) return;
+
         if (sinMovimiento || !('IntersectionObserver' in window)) {
-            elementos.forEach(function (el) { el.classList.add('visible'); });
+            Array.prototype.forEach.call(elementos, function (el) { el.classList.add('visible'); });
             return;
         }
 
-        const observador = new IntersectionObserver(function (entradas) {
+        var observador = new IntersectionObserver(function (entradas) {
             entradas.forEach(function (entrada) {
                 if (entrada.isIntersecting) {
                     entrada.target.classList.add('visible');
@@ -111,23 +177,155 @@
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 
-        elementos.forEach(function (el) { observador.observe(el); });
+        Array.prototype.forEach.call(elementos, function (el) { observador.observe(el); });
     }
 
     /* ------------------------------------------
-       5. ACORDEÓN FAQ (accesible)
+       7. BARRAS DE HABILIDADES (en fotogramas)
+       ------------------------------------------ */
+    function initBarrasHabilidades() {
+        var barras = document.querySelectorAll('.habilidad-barra-progreso');
+        if (!barras.length) return;
+
+        function rellenar(barra) {
+            barra.style.width = barra.dataset.ancho || '0%';
+        }
+
+        if (!('IntersectionObserver' in window)) {
+            Array.prototype.forEach.call(barras, rellenar);
+            return;
+        }
+
+        var observador = new IntersectionObserver(function (entradas) {
+            entradas.forEach(function (entrada) {
+                if (entrada.isIntersecting) {
+                    rellenar(entrada.target);
+                    observador.unobserve(entrada.target);
+                }
+            });
+        }, { threshold: 0.35 });
+
+        Array.prototype.forEach.call(barras, function (b) { observador.observe(b); });
+    }
+
+    /* ------------------------------------------
+       8. CONTADORES (cuentan por fotogramas)
+       ------------------------------------------ */
+    function initContadores() {
+        var contadores = document.querySelectorAll('[data-contador]');
+        if (!contadores.length) return;
+
+        function animar(el) {
+            var objetivo = parseInt(el.dataset.contador, 10) || 0;
+            if (sinMovimiento) { el.textContent = String(objetivo); return; }
+
+            var fotogramas = 10;
+            var paso = Math.max(1, Math.round(objetivo / fotogramas));
+            var actual = 0;
+
+            var intervalo = setInterval(function () {
+                actual += paso;
+                if (actual >= objetivo) {
+                    actual = objetivo;
+                    clearInterval(intervalo);
+                }
+                el.textContent = String(actual);
+            }, 70);
+        }
+
+        if (!('IntersectionObserver' in window)) {
+            Array.prototype.forEach.call(contadores, animar);
+            return;
+        }
+
+        var observador = new IntersectionObserver(function (entradas) {
+            entradas.forEach(function (entrada) {
+                if (entrada.isIntersecting) {
+                    animar(entrada.target);
+                    observador.unobserve(entrada.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        Array.prototype.forEach.call(contadores, function (c) { observador.observe(c); });
+    }
+
+    /* ------------------------------------------
+       9. LÍDER DE PELÍCULA (cuenta atrás 8→2)
+       ------------------------------------------ */
+    function initLeader() {
+        var contenedor = document.querySelector('[data-leader]');
+        var numero = document.querySelector('[data-leader-num]');
+        if (!contenedor || !numero || sinMovimiento) return;
+
+        var valor = 8;
+        var intervalo = setInterval(function () {
+            valor--;
+            if (valor < 2) {
+                clearInterval(intervalo);
+                contenedor.style.display = 'none';
+                return;
+            }
+            numero.textContent = String(valor);
+        }, 900);
+
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) clearInterval(intervalo);
+        });
+    }
+
+    /* ------------------------------------------
+       10. OSD VHS (timecode en vivo)
+       ------------------------------------------ */
+    function initVhsOsd() {
+        var osd = document.querySelector('[data-vhs-time]');
+        if (!osd || sinMovimiento) return;
+
+        var inicio = Date.now();
+        var intervalo = setInterval(function () {
+            var s = Math.floor((Date.now() - inicio) / 1000);
+            var min = String(Math.floor(s / 60)).padStart(2, '0');
+            var seg = String(s % 60).padStart(2, '0');
+            var fot = String(Math.floor(Math.random() * 25)).padStart(2, '0');
+            osd.textContent = '00:' + min + ':' + seg + ':' + fot;
+        }, 120);
+
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) clearInterval(intervalo);
+        });
+    }
+
+    /* ------------------------------------------
+       11. GLITCH AUTOMÁTICO en títulos de sección
+       ------------------------------------------ */
+    function initGlitchAuto() {
+        if (sinMovimiento) return;
+        var titulos = document.querySelectorAll('.titulo-seccion[data-glitch]');
+        if (!titulos.length) return;
+
+        var indice = 0;
+        setInterval(function () {
+            var el = titulos[indice % titulos.length];
+            indice++;
+            if (!el.isConnected) return;
+            el.classList.add('glitch-activo');
+            setTimeout(function () { el.classList.remove('glitch-activo'); }, 350);
+        }, 2600);
+    }
+
+    /* ------------------------------------------
+       12. FAQ ACORDEÓN
        ------------------------------------------ */
     function initFaq() {
-        const preguntas = document.querySelectorAll('.faq-question');
+        var preguntas = document.querySelectorAll('.faq-question');
         if (!preguntas.length) return;
 
-        preguntas.forEach(function (boton) {
+        Array.prototype.forEach.call(preguntas, function (boton) {
             boton.addEventListener('click', function () {
-                const item = boton.closest('.faq-item');
-                const respuesta = item.querySelector('.faq-answer');
-                const estabaAbierto = item.classList.contains('abierto');
+                var item = boton.closest('.faq-item');
+                var respuesta = item.querySelector('.faq-answer');
+                var estabaAbierto = item.classList.contains('abierto');
 
-                // Cerrar el resto para mantenerlo limpio
                 document.querySelectorAll('.faq-item.abierto').forEach(function (otro) {
                     if (otro === item) return;
                     otro.classList.remove('abierto');
@@ -147,8 +345,7 @@
             });
         });
 
-        // Recalcular altura si cambia el ancho (el texto puede ocupar más líneas)
-        let temporizador;
+        var temporizador;
         window.addEventListener('resize', function () {
             clearTimeout(temporizador);
             temporizador = setTimeout(function () {
@@ -160,24 +357,24 @@
     }
 
     /* ------------------------------------------
-       6. FILTROS DE PROYECTOS
+       13. FILTROS DE PROYECTOS
        ------------------------------------------ */
     function initFiltros() {
-        const botones = document.querySelectorAll('.btn-filtro');
+        var botones = document.querySelectorAll('.btn-filtro');
         if (!botones.length) return;
 
-        const secciones = document.querySelectorAll('.seccion-proyectos');
+        var secciones = document.querySelectorAll('.seccion-proyectos');
 
-        botones.forEach(function (boton) {
+        Array.prototype.forEach.call(botones, function (boton) {
             boton.addEventListener('click', function () {
-                const categoria = boton.dataset.filtro;
+                var categoria = boton.dataset.filtro;
 
-                botones.forEach(function (b) {
+                Array.prototype.forEach.call(botones, function (b) {
                     b.setAttribute('aria-pressed', String(b === boton));
                 });
 
-                secciones.forEach(function (seccion) {
-                    const coincide = categoria === 'todos' || seccion.dataset.categoria === categoria;
+                Array.prototype.forEach.call(secciones, function (seccion) {
+                    var coincide = categoria === 'todos' || seccion.dataset.categoria === categoria;
                     seccion.hidden = !coincide;
                 });
             });
@@ -185,19 +382,19 @@
     }
 
     /* ------------------------------------------
-       7. MODAL DE VIDEO
+       14. MODAL DE VIDEO
        ------------------------------------------ */
     function initModalVideo() {
-        const modal = document.getElementById('videoModal');
+        var modal = document.getElementById('videoModal');
         if (!modal) return;
 
-        const contenido = modal.querySelector('.modal-content');
-        const iframe = modal.querySelector('iframe');
-        const botonCerrar = modal.querySelector('.cerrar-modal');
-        let ultimoFoco = null;
+        var contenido = modal.querySelector('.modal-content');
+        var iframe = modal.querySelector('iframe');
+        var botonCerrar = modal.querySelector('.cerrar-modal');
+        var ultimoFoco = null;
 
         function abrir(tarjeta) {
-            const id = tarjeta.dataset.video;
+            var id = tarjeta.dataset.video;
             if (!id) return;
 
             ultimoFoco = tarjeta;
@@ -215,8 +412,8 @@
             modal.classList.remove('activo');
             modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
-            // Cortar la reproducción en cuanto se cierra
-            iframe.src = '';
+            // about:blank en vez de cadena vacía: '' recarga la propia página dentro del iframe en algunos navegadores
+            iframe.src = 'about:blank';
             if (ultimoFoco) {
                 ultimoFoco.focus();
                 ultimoFoco = null;
@@ -229,7 +426,6 @@
 
         botonCerrar.addEventListener('click', cerrar);
 
-        // Clic en el fondo (no dentro del reproductor)
         modal.addEventListener('click', function (e) {
             if (e.target === modal) cerrar();
         });
@@ -240,7 +436,33 @@
     }
 
     /* ------------------------------------------
-       8. AÑO DINÁMICO EN EL PIE
+       15. PARALLAX SUAVE EN STICKERS
+       ------------------------------------------ */
+    function initParallaxStickers() {
+        if (sinMovimiento) return;
+        var stickers = document.querySelectorAll('.hero-decor .sticker');
+        if (!stickers.length) return;
+
+        var ticking = false;
+        function actualizar() {
+            var y = window.scrollY;
+            Array.prototype.forEach.call(stickers, function (s, i) {
+                var factor = (i % 2 === 0) ? 0.06 : -0.05;
+                s.style.translate = '0 ' + (y * factor) + 'px';
+            });
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                window.requestAnimationFrame(actualizar);
+                ticking = true;
+            }
+        }, { passive: true });
+    }
+
+    /* ------------------------------------------
+       16. AÑO DINÁMICO
        ------------------------------------------ */
     function initAnio() {
         document.querySelectorAll('[data-anio]').forEach(function (el) {
@@ -254,11 +476,19 @@
     function init() {
         initMenuMovil();
         initHeaderScroll();
-        initBarrasHabilidades();
+        initTimelineScroll();
+        initRansom();
+        initKinetico();
         initScrollReveal();
+        initBarrasHabilidades();
+        initContadores();
+        initLeader();
+        initVhsOsd();
+        initGlitchAuto();
         initFaq();
         initFiltros();
         initModalVideo();
+        initParallaxStickers();
         initAnio();
     }
 

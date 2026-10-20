@@ -35,10 +35,13 @@ En VS Code también sirve la extensión **Live Server**.
 
 ## Qué revisar antes de publicar
 
-- [ ] **Formulario**: la `access_key` de Web3Forms es la misma que la del sitio viejo. El `redirect` ahora apunta a `https://keiboot.github.io/gracias/`; si publicas en otra URL, cámbialo en `contacto/index.html`.
-- [ ] **Invitación de Discord**: `discord.gg/qmnj5buH`. Si es temporal, genera un enlace permanente y reemplázalo en las 5 páginas.
-- [ ] **Porcentajes de habilidades**: en `index.html` están como Premiere 82%, After Effects 57%, Photoshop 45%.
-- [ ] **Métricas del hero**: "+4 años", "24–48 h", "6 meses de backup". Son tus propias afirmaciones del sitio viejo; ajústalas si cambiaron.
+- [x] **Formulario**: la `access_key` de Web3Forms es la misma que la del sitio viejo y el `redirect` apunta a `https://keiboot.github.io/gracias/`.
+- [x] **Métricas del hero**: 4 años, 24–48 h y 6 meses de backup, las mismas que usa el copy del sitio (meta description y "Sobre mí").
+- [x] **Porcentajes de habilidades**: Premiere 82%, After Effects 57%, Photoshop 45%.
+- [x] **Enlaces e imágenes**: todas las páginas y rutas locales responden, y los 35 IDs de YouTube del portafolio existen.
+- [ ] **Subir esta versión**: la web publicada (`keiboot.github.io`) todavía sirve la versión anterior. Copia el contenido de esta carpeta sobre la raíz de ese repo y haz commit.
+- [ ] **Imagen del hero**: `assets/img/kevin.jpg` existe en local pero no está en el servidor publicado (ahora responde 404); súbela con el resto.
+- [ ] **Día 19 del reto**: la tarjeta "Reto app en 30 días — Día 19" usa el mismo vídeo que el Día 10 (`srqLkFamv3k`). Cambia su `data-video` por el ID correcto o borra la tarjeta (y actualiza los contadores de los filtros).
 
 ## Publicar
 
