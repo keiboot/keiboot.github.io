@@ -39,8 +39,9 @@ En VS Code también sirve la extensión **Live Server**.
 - [x] **Métricas del hero**: 4 años, 24–48 h y 6 meses de backup, las mismas que usa el copy del sitio (meta description y "Sobre mí").
 - [x] **Porcentajes de habilidades**: Premiere 82%, After Effects 57%, Photoshop 45%.
 - [x] **Enlaces e imágenes**: todas las páginas y rutas locales responden, y los 35 IDs de YouTube del portafolio existen.
-- [ ] **Subir esta versión**: la web publicada (`keiboot.github.io`) todavía sirve la versión anterior. Copia el contenido de esta carpeta sobre la raíz de ese repo y haz commit.
-- [ ] **Imagen del hero**: `assets/img/kevin.jpg` existe en local pero no está en el servidor publicado (ahora responde 404); súbela con el resto.
+- [x] **Subir esta versión**: publicada el 20/10/2026 en `keiboot.github.io` (commit `e28128c`).
+- [x] **Imagen del hero**: `assets/img/kevin.jpg` subida; responde 200 en producción.
+- [x] **Redes**: Instagram `@kietoobtx`, X `@kietoo_` y TikTok `@__keitoo` en todas las páginas.
 - [ ] **Día 19 del reto**: la tarjeta "Reto app en 30 días — Día 19" usa el mismo vídeo que el Día 10 (`srqLkFamv3k`). Cambia su `data-video` por el ID correcto o borra la tarjeta (y actualiza los contadores de los filtros).
 
 ## Publicar
